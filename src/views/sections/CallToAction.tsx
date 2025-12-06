@@ -4,7 +4,7 @@ import { Button } from "@/views/components/ui/button";
 
 export const CallToAction = () => {
     return (
-        <section className="bg-[#F3F6FD] py-20 md:py-32 relative overflow-hidden font-dm">
+        <section id="contact" className="bg-[#F3F6FD] py-20 md:py-32 relative overflow-hidden font-dm">
 
             {/* Background Geometric Shapes */}
             <div className="absolute inset-0 pointer-events-none opacity-40">

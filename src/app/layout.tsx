@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     title: "Disrupt enterprise business models with cutting-edge technology.",
     description: "Enterprise leaders innovate faster with our cross-functional development teams, using cutting edge technologies, including Gen AI.",
   },
+  icons: {
+    icon: "/zomoso_LogoIcon.svg",
+  },
 };
 
 export default function RootLayout({
@@ -28,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className={cn("min-h-screen bg-background font-sans antialiased", inter.variable, dmSans.variable)}>
         <Preloader />
         <Header />

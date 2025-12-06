@@ -51,27 +51,29 @@ export const Header = () => {
                             </Link>
                         </div>
                     ))}
-                    <Button
-                        variant="outline"
-                        size="sm"
-                        onMouseEnter={() => setIsButtonHovered(true)}
-                        onMouseLeave={() => setIsButtonHovered(false)}
-                        className={cn(
-                            "rounded-[4px] px-6 transition-all border-transparent duration-500",
-                            isScrolled
-                                ? "text-white hover:text-white"
-                                : "border-[#FF5722] text-[#FF5722] hover:bg-[#FF5722] hover:text-white"
-                        )}
-                        style={isScrolled ? {
-                            background: "linear-gradient(#2B3D72, #2B3D72) padding-box, linear-gradient(to right, #5BA4E6, #FF5722, #5BA4E6) border-box",
-                            border: "1px solid transparent",
-                            backgroundSize: "100% 100%, 200% 100%",
-                            backgroundPosition: isButtonHovered ? "100% 0" : "0 0",
-                            transition: "background-position 0.5s ease"
-                        } : {}}
-                    >
-                        Contact Us
-                    </Button>
+                    <Link href="#contact">
+                        <Button
+                            variant="outline"
+                            size="sm"
+                            onMouseEnter={() => setIsButtonHovered(true)}
+                            onMouseLeave={() => setIsButtonHovered(false)}
+                            className={cn(
+                                "rounded-[4px] px-6 transition-all border-transparent duration-500",
+                                isScrolled
+                                    ? "text-white hover:text-white"
+                                    : "border-[#FF5722] text-[#FF5722] hover:bg-[#FF5722] hover:text-white"
+                            )}
+                            style={isScrolled ? {
+                                background: "linear-gradient(#2B3D72, #2B3D72) padding-box, linear-gradient(to right, #5BA4E6, #FF5722, #5BA4E6) border-box",
+                                border: "1px solid transparent",
+                                backgroundSize: "100% 100%, 200% 100%",
+                                backgroundPosition: isButtonHovered ? "100% 0" : "0 0",
+                                transition: "background-position 0.5s ease"
+                            } : {}}
+                        >
+                            Contact Us
+                        </Button>
+                    </Link>
                 </nav>
 
                 {/* Mobile Menu Toggle */}
@@ -102,7 +104,9 @@ export const Header = () => {
                             {item.label}
                         </Link>
                     ))}
-                    <Button className="w-full mt-4" variant="brand">Get in Touch</Button>
+                    <Link href="#contact" onClick={closeMobileMenu}>
+                        <Button className="w-full mt-4" variant="brand">Get in Touch</Button>
+                    </Link>
                 </nav>
             </div>
         </header>
