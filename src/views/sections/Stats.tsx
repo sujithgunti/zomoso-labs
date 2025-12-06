@@ -10,6 +10,8 @@ export const Stats = () => {
         target: targetRef,
     });
 
+    // Map vertical scroll progress (0 to 1) to horizontal movement (2% to -55%)
+    // This creates the effect of the content sliding left as the user scrolls down
     const x = useTransform(scrollYProgress, [0, 1], ["2%", "-55%"]);
 
     return (

@@ -83,6 +83,8 @@ export const Hero = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
 
                     {/* Left: Text Content */}
+                    {/* AnimatePresence (implied by motion usage here although accurate wrapper is higher up usually) handles exit animations */}
+                    {/* Key is crucial here: changing the key triggers the re-mount and thus the initial/exit animations for each tab switch */}
                     <motion.div
                         key={activeTab.id + "-text"}
                         initial={{ opacity: 0, y: 20 }}

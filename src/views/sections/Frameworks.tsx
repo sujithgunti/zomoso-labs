@@ -50,6 +50,8 @@ const InfiniteMovingCards = ({
         if (containerRef.current && scrollerRef.current) {
             const scrollerContent = Array.from(scrollerRef.current.children);
 
+            // Duplicate items to ensure seamless infinite scrolling
+            // We clone children and append them to create a buffer that allows for smooth looping without visual gaps
             scrollerContent.forEach((item) => {
                 const duplicatedItem = item.cloneNode(true);
                 if (scrollerRef.current) {
@@ -57,6 +59,7 @@ const InfiniteMovingCards = ({
                 }
             });
 
+            // Initialize animation parameters
             getDirection();
             getSpeed();
             setStart(true);
