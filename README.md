@@ -39,7 +39,17 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 # Project Technical Documentation
 
-## 1. Complex Animations Explained
+## 1. Verification Results
+
+We achieved significant improvements in all key metrics following our optimizations.
+
+![Lighthouse Performance Scores](/public/performance_image.png)
+
+[Download Performance Report (PDF)](/public/performance.pdf)
+
+---
+
+## 2. Complex Animations Explained
 
 ### Hero Section (`src/views/sections/Hero.tsx`)
 - **Tab Component Logic**: Uses `AnimatePresence` to handle the mounting and unmounting of tab content. The `key` prop on the content container (`motion.div`) is critical; changing it (via state `activeTabId`) triggers Framer Motion's `exit` and `initial` animations, creating a smooth transition between content.
@@ -61,7 +71,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ---
 
-## 2. Performance Optimization Decisions
+## 3. Performance Optimization Decisions
 
 - **Next.js Image Component**: Used `next/image` for all logos and icons (Frameworks, Testimonials) to automatically serve optimized formats (WebP), lazy load images below the fold, and prevent layout shifts (CLS).
 - **Font Optimization**: Used `next/font/google` for Inter and DM Sans. This self-hosts the font files at build time, eliminating external network requests to Google Fonts and preventing layout shifts (FOUT/FOIT).
@@ -70,7 +80,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ---
 
-## 3. Challenges & Solutions
+## 4. Challenges & Solutions
 
 ### Challenge 1: Header Transparency & Scroll State
 **Issue:** The header needed to be transparent initially but turn solid and show different styling (white text vs dark text) when scrolling.
@@ -92,11 +102,3 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 **Solution:**
 1.  **Metadata**: Enhanced `src/app/layout.tsx` with specific `title` templates, `description`, `canonical` tags, and `OpenGraph` data.
 2.  **Robots/Sitemap**: Added dynamic `robots.ts` and `sitemap.ts` files pointing to the correct production URL on Vercel, ensuring search engines can properly index the site.
-
----
-
-## 4. Verification Results
-
-We achieved significant improvements in all key metrics following our optimizations.
-
-![Lighthouse Performance Scores](/public/performance.pdf)
